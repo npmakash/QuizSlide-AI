@@ -1,0 +1,15 @@
+{
+  "name": "ai-slides-quiz-generator",
+  "version": "1.0.0",
+  "description": "AI-Powered Quiz to Google Slides Automation Web App",
+  "main": "server/server.js",
+  "scripts": {
+    "install:all": "npm install && npm install --prefix server && npm install --prefix frontend --legacy-peer-deps",
+    "dev:server": "npm run dev --prefix server",
+    "dev:frontend": "npm run dev --prefix frontend",
+    "dev": "concurrently \"npm run dev:server\" \"npm run dev:frontend\""
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
