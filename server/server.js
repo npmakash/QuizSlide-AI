@@ -29,8 +29,9 @@ app.use(cors({
     // In development, allow any localhost or local network IP (192.168.x.x, 10.x.x.x, 172.x.x.x) on any port
     const isLocalhost = origin.startsWith('http://localhost:') || origin.startsWith('http://127.0.0.1:');
     const isLocalIp = /^http:\/\/(?:192\.168|10|172\.(?:1[6-9]|2\d|3[01]))\.\d+\.\d+:\d+$/.test(origin);
+    const isVercel = origin.endsWith('.vercel.app');
     
-    if (isLocalhost || isLocalIp || origin === frontendUrl) {
+    if (isLocalhost || isLocalIp || isVercel || origin === frontendUrl) {
       return callback(null, true);
     }
     
